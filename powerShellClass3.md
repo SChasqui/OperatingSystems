@@ -12,8 +12,7 @@ mejorado
 ```
 
 Este es el contenido del archivo 2 (ejer2)
-```powershell
-```
+
 ```console 
 hola
 este
@@ -36,6 +35,9 @@ pobre       =>
 ejer1       <=           
 mejorado    <=         
 ```
+  Una flecha hacia la derecha indica que este nombre está en la lista nueva, pero no está en la vieja
+  Una flecha hacia la derecha indica que este nombre está en la lista vieja, pero no está en la nueva
+
 
 2. Qué ocurre si se ejecuta:
 
@@ -44,7 +46,7 @@ get-service | export-csv servicios.csv | out-file
 ```
   Por qué?
 
-
+Esta es la salida de ejecutar el comando anterior
 ```console
   out-file : No se puede procesar el argumento porque el valor del argumento "path" es NULL. Cambie el valor del argumento "path" a un valor no 
 nulo.
@@ -58,7 +60,8 @@ En línea: 1 Carácter: 42
   Este comando no funciona debido a que el archivo servicios.csv no existe.
   
 3. Cómo haría para crear un archivo delimitado por puntos y comas (;)? PISTA: Se emplea export-csv, pero con un parámetro adicional.
- 
+  
+  Simplemente definiendo el parametro -Delimiter
 ```powershell
 Get-Process | Export-Csv ejemplo.csv -Delimiter ";"
 ```
@@ -120,11 +123,12 @@ Get-Date
 ```
 
 8. Qué tipo de objeto produce el cmdlet de la pregunta 7?
-
+  
+  Esto se puede ver por medio del comando Get-Member o gm
 ```powershell
 Get-Date | gm
 ```
-
+  La salida de este comando es la siguiente:
 ```console
 
 
@@ -134,7 +138,7 @@ Name                 MemberType     Definition
 ----                 ----------     ----------                   
 ```
 
-  Produceun objeto de tipo DateTime (ver líneas de comando).
+  Podemos observar que se produce un objeto de tipo DateTime (ver líneas de comando).
   
  9. Usando el cmdlet de la pregunta 7 y select-object, despliegue solamente el día de la semana, así:
  
@@ -146,18 +150,21 @@ Name                 MemberType     Definition
   El comando que lo permite es:
 ```powershell
  Get-Date | Select-Object -Property "dayofweek"
-
+```
+  Y la salida es la siguiente:
+```console
 DayOfWeek
 ---------
 Wednesday
  ```
  
 10. Identifique un cmdlet que muestre información acerca de parches (hotfixes) instalados en el sistema.
-
+  
+  Para obtener los parches se obtienen mediante el siguiente comando:
 ```powershell
 Get-HotFix
 ```
-
+  A continuación el resultado:
 ```console
 Source        Description      HotFixID      InstalledBy          InstalledOn              
 ------        -----------      --------      -----------          -----------              
@@ -173,11 +180,13 @@ MYLAP         Update           KB4528760     NT AUTHORITY\SYSTEM  20/01/2020 12:
 ```
 
 11. Empleando el cmdlet de la pregunta 10, muestre una lista de parches instalados. Luego extienda la expresión para ordenar la lista por fecha de instalación, y muestre en pantalla únicamente la fecha de instalación, el usuario que instaló el parche, y el ID del parche. Recuerde examinar los nombres de las propiedades.
+
+  Es posible lograr el requerimiento anterior mediante:
     
 ```powershell
 Get-HotFix | Select-Object -Property InstalledOn,InstalledBy,HotFixID | Sort-Object -Property InstalledOn 
 ```
-
+  Y muestra como resultado
 ```console
 InstalledOn              InstalledBy         HotFixID 
 -----------              -----------         -------- 
@@ -193,99 +202,47 @@ InstalledOn              InstalledBy         HotFixID
 ```
   
 12. Complemente la solución a la pregunta 11, para que el sistema ordene los resultados por la descripción del parche, e incluya en el listado la descripción, el ID del parche, y la fecha de instalación. Escriba los resultados a un archivo HTML.
-
+  
+  
 ```powershell
-Get-HotFix | Select-Object -Property hotfixID,Description,installedOn | Sort-Object -Property Description | Export-Clixml parches.xml
+Get-HotFix | Select-Object -Property hotfixID,Description,installedOn | Sort-Object -Property Description | ConvertTo-Html | Out-File parches.html
 ```
-  Muestra del archivo XML
+Muestra del archivo creado (parches.html)
+```powershell
+  type .\parches.html
+```
+
+Y a continuación el resultado:
+
 ```console
-type .\parches.xml
-<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04">
-  <Obj RefId="0">
-    <TN RefId="0">
-      <T>Selected.System.Management.ManagementObject</T>
-      <T>System.Management.Automation.PSCustomObject</T>
-      <T>System.Object</T>
-    </TN>
-    <MS>
-      <S N="hotfixID">KB4515383</S>
-      <S N="Description">Security Update</S>
-      <DT N="InstalledOn">2019-09-21T00:00:00</DT>
-    </MS>
-  </Obj>
-  <Obj RefId="1">
-    <TNRef RefId="0" />
-    <MS>
-      <S N="hotfixID">KB4515530</S>
-      <S N="Description">Security Update</S>
-      <DT N="InstalledOn">2019-09-21T00:00:00</DT>
-    </MS>
-  </Obj>
-  <Obj RefId="2">
-    <TNRef RefId="0" />
-    <MS>
-      <S N="hotfixID">KB4516115</S>
-      <S N="Description">Security Update</S>
-      <DT N="InstalledOn">2019-09-21T00:00:00</DT>
-    </MS>
-  </Obj>
-  <Obj RefId="3">
-    <TNRef RefId="0" />
-    <MS>
-      <S N="hotfixID">KB4520390</S>
-      <S N="Description">Security Update</S>
-      <DT N="InstalledOn">2019-10-04T00:00:00</DT>
-    </MS>
-  </Obj>
-  <Obj RefId="4">
-    <TNRef RefId="0" />
-    <MS>
-      <S N="hotfixID">KB4521863</S>
-      <S N="Description">Security Update</S>
-      <DT N="InstalledOn">2019-10-13T00:00:00</DT>
-    </MS>
-  </Obj>
-  <Obj RefId="5">
-    <TNRef RefId="0" />
-    <MS>
-      <S N="hotfixID">KB4524569</S>
-      <S N="Description">Security Update</S>
-      <DT N="InstalledOn">2019-11-14T00:00:00</DT>
-    </MS>
-  </Obj>
-  <Obj RefId="6">
-    <TNRef RefId="0" />
-    <MS>
-      <S N="hotfixID">KB4528759</S>
-      <S N="Description">Security Update</S>
-      <DT N="InstalledOn">2020-01-20T00:00:00</DT>
-    </MS>
-  </Obj>
-  <Obj RefId="7">
-    <TNRef RefId="0" />
-    <MS>
-      <S N="hotfixID">KB4534132</S>
-      <S N="Description">Update</S>
-      <DT N="InstalledOn">2020-02-10T00:00:00</DT>
-    </MS>
-  </Obj>
-  <Obj RefId="8">
-    <TNRef RefId="0" />
-    <MS>
-      <S N="hotfixID">KB4528760</S>
-      <S N="Description">Update</S>
-      <DT N="InstalledOn">2020-01-20T00:00:00</DT>
-    </MS>
-  </Obj>
-</Objs>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>HTML TABLE</title>
+</head><body>
+<table>
+<colgroup><col/><col/><col/></colgroup>
+<tr><th>hotfixID</th><th>Description</th><th>InstalledOn</th></tr>
+<tr><td>KB4515383</td><td>Security Update</td><td>21/09/2019 12:00:00 a.m.</td></tr>
+<tr><td>KB4515530</td><td>Security Update</td><td>21/09/2019 12:00:00 a.m.</td></tr>
+<tr><td>KB4516115</td><td>Security Update</td><td>21/09/2019 12:00:00 a.m.</td></tr>
+<tr><td>KB4520390</td><td>Security Update</td><td>4/10/2019 12:00:00 a.m.</td></tr>
+<tr><td>KB4521863</td><td>Security Update</td><td>13/10/2019 12:00:00 a.m.</td></tr>
+<tr><td>KB4524569</td><td>Security Update</td><td>14/11/2019 12:00:00 a.m.</td></tr>
+<tr><td>KB4528759</td><td>Security Update</td><td>20/01/2020 12:00:00 a.m.</td></tr>
+<tr><td>KB4534132</td><td>Update</td><td>10/02/2020 12:00:00 a.m.</td></tr>
+<tr><td>KB4528760</td><td>Update</td><td>20/01/2020 12:00:00 a.m.</td></tr>
+</table>
+</body></html>
 ```
   
 13. Muestre una lista de las 50 entradas más nuevas del log de eventos System. Ordene la lista de modo que las entradas más antiguas aparezcan primero; las entradas producidas al mismo tiempo deben ordenarse por número índice. Muestre el número índice, la hora y la fuente para cada entrada. Escriba esta información en un archivo de texto plano.
 
+  Se utiliza el siguiente comando
 ```powershell
 Get-EventLog -LogName System -Newest 50 | Sort-Object -Property TimeGenerated | Sort-Object -Property Index | Select-Object -Property index,TimeGenerated,source | Out-File archivoPrueba.txt
 ```
-
+  Muestra del archivo de texto plano creado:
 ```console
 type .\archivoPrueba.txt
 
