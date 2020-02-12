@@ -1,9 +1,40 @@
 # PREGUNTAS EJERCICIO CLASE 3
 
 1. Cree dos archivos de texto similares (con una o dos líneas diferentes). Compárelos empleando diff.
+
+Este es el contenido del archivo 1 (ejer1)
+```console 
+hola
+este
+es
+ejer1
+mejorado
+```
+
+Este es el contenido del archivo 2 (ejer2)
+```powershell
+```
+```console 
+hola
+este
+es
+ejer1
+mejorado
+```
+
+Al invocar el comando diff se están comparando los archivos
   
 ```powershell
 diff -ReferenceObject (type ejerm.txt) -DifferenceObject (type .\ejem2.txt)
+```
+Esta es la salida del cmdlet anterior
+```console
+InputObject SideIndicator
+----------- -------------
+ejer2       =>           
+pobre       =>           
+ejer1       <=           
+mejorado    <=         
 ```
 
 2. Qué ocurre si se ejecuta:
@@ -40,14 +71,22 @@ Set-ItemProperty .\ejemplo.csv -Name Attributes -Value "readonly,archive"
 ```
   Por otro lado, para que el comando pregunte antes de hacer la acción de sobreescritura, se utiliza el parámetro -Confirm, el cual sacará en pantalla un pront de confirmación.
   
+```powershell
+Set-ItemProperty .\ejemplo.csv -Name Attributes -Value "readonly,archive" -confirm
+```
+  
 5. Windows emplea configuraciones regionales, lo que incluye el separador de listas. En Windows en inglés, el separador de listas es la coma (,). Cómo se le dice a Export-CSV que emplee el separador del sistema en lugar de la coma?
 
+  El comando Get-Culture permite obtener información de configuración del sistema, como el lenguaje, la fecha y demás.
 ```powershell
 Get-Process | Export-Csv csvSistema.csv -Delimiter (Get-Culture).TextInfo.ListSeparator
 ```
-
+Con el siguiente comando se muestra el contenido del archivo csvSistema
 ```powershell
 type .\csvSistema.csv
+```
+Y este es el resultado:
+```powershell
 #TYPE System.Diagnostics.Process
 "Name";"SI";"Handles";"VM";"WS";"PM";"NPM";"Path";"Company";"CPU";"FileVersion";"ProductVersion";"Description";"Product";"__NounName";"BasePriority";"ExitCode
 ";"HasExited";"ExitTime";"Handle";"SafeHandle";"HandleCount";"Id";"MachineName";"MainWindowHandle";"MainWindowTitle";"MainModule";"MaxWorkingSet";"MinWorkingS
