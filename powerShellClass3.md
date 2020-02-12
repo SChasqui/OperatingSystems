@@ -24,6 +24,6 @@ En línea: 1 Carácter: 42
     + FullyQualifiedErrorId : ArgumentNull,Microsoft.PowerShell.Commands.OutFileCommand
 ```
 
-
+Este comando no funciona debido a que el archivo servicios no existe
   
   
