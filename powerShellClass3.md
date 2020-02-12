@@ -41,6 +41,45 @@ Set-ItemProperty .\ejemplo.csv -Name Attributes -Value "readonly,archive"
   Por otro lado, para que el comando pregunte antes de hacer la acción de sobreescritura, se utiliza el parámetro -Confirm, el cual sacará en pantalla un pront de confirmación.
   
 5. Windows emplea configuraciones regionales, lo que incluye el separador de listas. En Windows en inglés, el separador de listas es la coma (,). Cómo se le dice a Export-CSV que emplee el separador del sistema en lugar de la coma?
+
+6. Identifique un cmdlet que permita generar un número aleatorio.
+
+```powershell
+Get-Random
+```
+
+7. Identifique un cmdlet que despliegue la fecha y hora actuales.
+
+```powershell
+Get-Date
+```
+
+8. Qué tipo de objeto produce el cmdlet de la pregunta 7?
+
+```powershell
+Get-Date | gm
+```
+
+```console
+
+
+   TypeName: System.DateTime
+
+Name                 MemberType     Definition                                                                                                               
+----                 ----------     ----------                   
+```
+
+  Produceun objeto de tipo DateTime (ver líneas de comando).
+  
+ 9. Usando el cmdlet de la pregunta 7 y select-object, despliegue solamente el día de la semana, así:
+   
+ >  DayOfWeek
+ > ---------
+ >   Thursday
+    
+    
+
+
   
   
   
