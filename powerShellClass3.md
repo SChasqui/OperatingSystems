@@ -244,10 +244,12 @@ type .\parches.xml
 13. Muestre una lista de las 50 entradas más nuevas del log de eventos System. Ordene la lista de modo que las entradas más antiguas aparezcan primero; las entradas producidas al mismo tiempo deben ordenarse por número índice. Muestre el número índice, la hora y la fuente para cada entrada. Escriba esta información en un archivo de texto plano.
 
 ```powershell
-Get-EventLog -LogName System -Newest 50 | Sort-Object -Property TimeGenerated | Sort-Object -Property Index | Select-Object -Property index,TimeGenerated,source
+Get-EventLog -LogName System -Newest 50 | Sort-Object -Property TimeGenerated | Sort-Object -Property Index | Select-Object -Property index,TimeGenerated,source | Out-File archivoPrueba.txt
 ```
 
 ```console
+type .\archivoPrueba.txt
+
 Index TimeGenerated            Source                                
 ----- -------------            ------                                
 26019 12/02/2020 12:22:08 p.m. Microsoft-Windows-Kernel-Power        
@@ -299,7 +301,7 @@ Index TimeGenerated            Source
 26065 12/02/2020 4:22:52 p.m.  Microsoft-Windows-Power-Troubleshooter
 26066 12/02/2020 4:23:01 p.m.  Microsoft-Windows-DNS-Client          
 26067 12/02/2020 4:31:33 p.m.  Microsoft-Windows-DNS-Client          
-26068 12/02/2020 4:33:10 p.m.  VBoxNetLwf                            
+26068 12/02/2020 4:33:10 p.m.  VBoxNetLwf               
 
 ```
 
