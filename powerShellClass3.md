@@ -72,11 +72,41 @@ Name                 MemberType     Definition
   Produceun objeto de tipo DateTime (ver líneas de comando).
   
  9. Usando el cmdlet de la pregunta 7 y select-object, despliegue solamente el día de la semana, así:
-   
- >  DayOfWeek
- > ---------
- >   Thursday
-    
+ 
+```powershell
+   DayOfWeek
+  ---------
+    Thursday
+ ```
+  El comando que lo permite es:
+```powershell
+ Get-Date | Select-Object -Property "dayofweek"
+
+DayOfWeek
+---------
+Wednesday
+ ```
+ 
+10. Identifique un cmdlet que muestre información acerca de parches (hotfixes) instalados en el sistema.
+
+```powershell
+Get-HotFix
+```
+
+```console
+Source        Description      HotFixID      InstalledBy          InstalledOn              
+------        -----------      --------      -----------          -----------              
+MYLAP         Update           KB4534132     NT AUTHORITY\SYSTEM  10/02/2020 12:00:00 a.m. 
+MYLAP         Security Update  KB4515383     NT AUTHORITY\SYSTEM  21/09/2019 12:00:00 a.m. 
+MYLAP         Security Update  KB4515530     NT AUTHORITY\SYSTEM  21/09/2019 12:00:00 a.m. 
+MYLAP         Security Update  KB4516115     NT AUTHORITY\SYSTEM  21/09/2019 12:00:00 a.m. 
+MYLAP         Security Update  KB4520390     NT AUTHORITY\SYSTEM  4/10/2019 12:00:00 a.m.  
+MYLAP         Security Update  KB4521863     NT AUTHORITY\SYSTEM  13/10/2019 12:00:00 a.m. 
+MYLAP         Security Update  KB4524569     NT AUTHORITY\SYSTEM  14/11/2019 12:00:00 a.m. 
+MYLAP         Security Update  KB4528759     NT AUTHORITY\SYSTEM  20/01/2020 12:00:00 a.m. 
+MYLAP         Update           KB4528760     NT AUTHORITY\SYSTEM  20/01/2020 12:00:00 a.m. 
+```
+
     
 
 
