@@ -68,14 +68,24 @@ Get-Process | Export-Csv ejemplo.csv -Delimiter ";"
 
 4. Export-cliXML y Export-CSV modifican el sistema, porque pueden crear y sobreescribir archivos. Existe algún parámetro que evite la sobreescritura de un archivo existente? Existe algún parámetro que permita que el comando pregunte antes de sobresscribir un archivo?
 
-  Para evitar la sobreescritura, es posible cambiar los atributos del archivo y ponerlo como sólo lectura.
+  Para evitar la sobreescritura, se puede utilizar el parámetro -NoClobber
 ```powershell
-Set-ItemProperty .\ejemplo.csv -Name Attributes -Value "readonly,archive"
+Get-Process | Out-File -FilePath .\ejer1.txt -NoClobber
+```
+  Al tratar de sobreescribir el archivo ejer1, se obtiene el isguiente resultado:
+  
+```console
+Out-File : El archivo 'C:\Users\santi\ejer1.txt' ya existe.
+En línea: 1 Carácter: 15
++ Get-Process | Out-File -FilePath .\ejer1.txt -NoClobber
++               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (C:\Users\santi\ejer1.txt:String) [Out-File], IOException
+    + FullyQualifiedErrorId : NoClobber,Microsoft.PowerShell.Commands.OutFileCommand
 ```
   Por otro lado, para que el comando pregunte antes de hacer la acción de sobreescritura, se utiliza el parámetro -Confirm, el cual sacará en pantalla un pront de confirmación.
   
 ```powershell
-Set-ItemProperty .\ejemplo.csv -Name Attributes -Value "readonly,archive" -confirm
+Get-Process | Out-File -FilePath .\ejer1.txt -Confirm
 ```
   
 5. Windows emplea configuraciones regionales, lo que incluye el separador de listas. En Windows en inglés, el separador de listas es la coma (,). Cómo se le dice a Export-CSV que emplee el separador del sistema en lugar de la coma?
