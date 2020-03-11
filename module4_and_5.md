@@ -116,17 +116,7 @@
    ```    
    
    ```console
-   TypeName: System.Management.ManagementObject#root\cimv2\Win32_NetworkAdapterConfiguration
-
-Name                         MemberType    Definition                                                                                     
-----                         ----------    ----------                                                                                     
-PSComputerName               AliasProperty PSComputerName = __SERVER                                                                      
-DisableIPSec                 Method        System.Management.ManagementBaseObject DisableIPSec()                                          
-EnableDHCP                   Method        System.Management.ManagementBaseObject EnableDHCP()                                            
-EnableIPSec                  Method        System.Management.ManagementBaseObject EnableIPSec(System.String[] IPSecPermitTCPPorts, Syst...
-EnableStatic                 Method        System.Management.ManagementBaseObject EnableStatic(System.String[] IPAddress, System.String...
-ReleaseDHCPLease             Method        System.Management.ManagementBaseObject ReleaseDHCPLease()                                      
-RenewDHCPLease               Method        System.Management.ManagementBaseObject RenewDHCPLease()     
+   sasasadas
    ``` 
 
 3. Empleando WMI, muestre una lista de servicios, que incluya su status actual,
