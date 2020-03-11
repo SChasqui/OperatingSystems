@@ -152,6 +152,31 @@
     
    ``` 
    
+  ```powershell
+   Get-hotFix
+   ``` 
+   
+   ```console
+   PS C:\Users\santi> Get-HotFix
+
+Source        Description      HotFixID      InstalledBy          InstalledOn              
+------        -----------      --------      -----------          -----------              
+MYLAP         Update           KB4534132     NT AUTHORITY\SYSTEM  10/02/2020 12:00:00 a.m. 
+MYLAP         Security Update  KB4515383     NT AUTHORITY\SYSTEM  21/09/2019 12:00:00 a.m. 
+MYLAP         Security Update  KB4515530     NT AUTHORITY\SYSTEM  21/09/2019 12:00:00 a.m. 
+MYLAP         Security Update  KB4516115     NT AUTHORITY\SYSTEM  21/09/2019 12:00:00 a.m. 
+MYLAP         Security Update  KB4520390     NT AUTHORITY\SYSTEM  4/10/2019 12:00:00 a.m.  
+MYLAP         Security Update  KB4521863     NT AUTHORITY\SYSTEM  13/10/2019 12:00:00 a.m. 
+MYLAP         Security Update  KB4524244     NT AUTHORITY\SYSTEM  14/02/2020 12:00:00 a.m. 
+MYLAP         Security Update  KB4524569     NT AUTHORITY\SYSTEM  14/11/2019 12:00:00 a.m. 
+MYLAP         Security Update  KB4528759     NT AUTHORITY\SYSTEM  20/01/2020 12:00:00 a.m. 
+MYLAP         Security Update  KB4537759     NT AUTHORITY\SYSTEM  13/02/2020 12:00:00 a.m. 
+MYLAP         Security Update  KB4538674     NT AUTHORITY\SYSTEM  13/02/2020 12:00:00 a.m. 
+MYLAP         Security Update  KB4541338     NT AUTHORITY\SYSTEM  11/03/2020 12:00:00 a.m. 
+MYLAP         Update           KB4540673     NT AUTHORITY\SYSTEM  11/03/2020 12:00:00 a.m. 
+
+   ``` 
+   
 
 3. Empleando WMI, muestre una lista de servicios, que incluya su status actual,
    su modalidad de inicio, y las cuentas que emplean para hacer login.
