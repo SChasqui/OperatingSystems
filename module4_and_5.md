@@ -97,3 +97,4 @@
    Get-Process | Where-Object {$_.Name -like '*conhost*' -or ($_.Name -like 'svchost')} | fl
    ```   
     
+# Módulo 5 Powershell
