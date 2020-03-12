@@ -67,7 +67,7 @@
    Sugerencia: Si el caché está vacío, visite algunos sitios web para poblarlo.
    
    ```powershell
-   Get-DnsClientCache | Where -Filter {$_.Type -like 1 -or ($_.Type -like 28)} | fl
+   Get-DnsClientCache -Type A, AAA | fl
    ```
 
 9. Genere una lista de todos los archivos ``.exe`` del directorio
