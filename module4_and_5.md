@@ -199,5 +199,9 @@
    También puede consultar si hay productos antivirus instalados en el sistema.
    
    ```powershell
+      Get-CimInstance -Namespace root\SecurityCenter2 -ClassName AntiSpywareProduct
+   ```
    
-   ``` 
+   ```powershell
+      Get-CimInstance -Namespace root\SecurityCenter2 -ClassName AntiVirusProduct
+   ```
