@@ -74,7 +74,7 @@
    ``C:\Windows\System32`` que tengan más de 5 MB.
    
    ```powershell
-   Get-ChildItem -Path C:\Windows\System32 | where -FilterScript {$_.Length -gt 5MB} | fl
+   Get-ChildItem -Path C:\Windows\System32 | where -filter {$_.Name -like "*.exe" -and ($_.Length -gt 5MB)} | fl
    ```
 
 10. Muestre una lista de parches que sean actualizaciones de seguridad.
