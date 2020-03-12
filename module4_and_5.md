@@ -89,7 +89,7 @@
     no tienen valor en el campo ``Installed By``.
 
    ```powershell
-   Get-HotFix | where -filter {$_.Description -like "*Update*"} |where -FilterScript {$_.InstalledBy -like "*System*"}
+   Get-HotFix | where -filter {$_.Description -like "*Update*" -and ($_.InstalledBy -like "*System*")}
    ```
 12. Genere una lista de todos los procesos que estén corriendo con el nombre
     **Conhost** o **Svchost**.
