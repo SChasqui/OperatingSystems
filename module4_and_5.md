@@ -154,10 +154,12 @@
    
   ```powershell
    Get-hotFix
-   ``` 
+  ``` 
    
    ```console
-         PS C:\Users\santi> Get-HotFix
+   
+   
+      PS C:\Users\santi> Get-HotFix
       Source        Description      HotFixID      InstalledBy          InstalledOn              
       ------        -----------      --------      -----------          -----------              
       MYLAP         Update           KB4534132     NT AUTHORITY\SYSTEM  10/02/2020 12:00:00 a.m. 
@@ -190,7 +192,7 @@
    ``SecurityCenter2``, que tengan **product** como parte del nombre.
    
    ```powershell
-   
+      Get-CimClass -Namespace root\SecurityCenter2 | where cimclassname -Like '*product*'
    ``` 
 5. Empleando cmdlets de CIM, y los resultados del ejercicio anterior, muestre
    los nombres de las aplicaciones antispyware instaladas en el sistema.
