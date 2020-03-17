@@ -1,0 +1,2442 @@
+﻿**********************
+Inicio de la transcripción de Windows PowerShell
+Hora de inicio: 20200317145239
+Nombre de usuario: MYLAP\santi
+Usuario RunAs: MYLAP\santi
+Nombre de la configuración: 
+Máquina: MYLAP (Microsoft Windows NT 10.0.18362.0)
+Aplicación host: C:\WINDOWS\system32\WindowsPowerShell\v1.0\PowerShell_ISE.exe
+Id. de proceso: 14144
+PSVersion: 5.1.18362.628
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.18362.628
+BuildVersion: 10.0.18362.628
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+La transcripción ha comenzado. El archivo de salida es C:\Users\santi\Documents\PowerShell_transcript.MYLAP.T436NrL0.20200317145239.txt
+PS C:\Users\santi> Get-WmiObject -List| where name -Like "*network*"
+
+
+   NameSpace: ROOT\cimv2
+
+Name                                Methods              Properties
+----                                -------              ----------
+CIM_NetworkAdapter                  {SetPowerState, R... {AutoSense, Availability, Caption, ConfigManagerErrorCode...}
+Win32_NetworkAdapter                {SetPowerState, R... {AdapterType, AdapterTypeId, AutoSense, Availability...}
+Win32_NetworkConnection             {}                   {AccessMask, Caption, Comment, ConnectionState...}
+Win32_NetworkProtocol               {}                   {Caption, ConnectionlessService, Description, GuaranteesDelivery...}
+Win32_NetworkClient                 {}                   {Caption, Description, InstallDate, Manufacturer...}
+Win32_NetworkLoginProfile           {}                   {AccountExpires, AuthorizationFlags, BadPasswordCount, Caption...}
+Win32_NetworkAdapterConfiguration   {EnableDHCP, Rene... {ArpAlwaysSourceRoute, ArpUseEtherSNAP, Caption, DatabasePath...}
+Win32_NetworkAdapterSetting         {}                   {Element, Setting}
+Win32_SystemNetworkConnections      {}                   {GroupComponent, PartComponent}
+Win32_PerfFormattedData_Counters... {}                   {Bytestransmitted, BytestransmittedPersec, Caption, Description...}
+Win32_PerfRawData_Counters_Netwo... {}                   {Bytestransmitted, BytestransmittedPersec, Caption, Description...}
+Win32_PerfFormattedData_Counters... {}                   {BuildScatterGatherCyclesPersec, Caption, Description, Frequency_Object...}
+Win32_PerfRawData_Counters_PerPr... {}                   {BuildScatterGatherCyclesPersec, Caption, Description, Frequency_Object...}
+Win32_PerfFormattedData_Counters... {}                   {BuildScatterGatherListCallsPersec, Caption, Description, DPCsDeferredPersec...}
+Win32_PerfRawData_Counters_PerPr... {}                   {BuildScatterGatherListCallsPersec, Caption, Description, DPCsDeferredPersec...}
+Win32_PerfFormattedData_Counters... {}                   {Caption, Description, DevicePowerState, Frequency_Object...}
+Win32_PerfRawData_Counters_Physi... {}                   {Caption, Description, DevicePowerState, Frequency_Object...}
+Win32_PerfFormattedData_Counters... {}                   {BaseTCPRTT, BaseUDPRTT, Caption, CurrentTCPBandwidth...}
+Win32_PerfRawData_Counters_Remot... {}                   {BaseTCPRTT, BaseUDPRTT, Caption, CurrentTCPBandwidth...}
+Win32_PerfFormattedData_NETCLRNe... {}                   {BytesReceived, BytesSent, Caption, ConnectionsEstablished...}
+Win32_PerfRawData_NETCLRNetworki... {}                   {BytesReceived, BytesSent, Caption, ConnectionsEstablished...}
+Win32_PerfFormattedData_NETCLRNe... {}                   {BytesReceived, BytesSent, Caption, ConnectionsEstablished...}
+Win32_PerfRawData_NETCLRNetworki... {}                   {BytesReceived, BytesSent, Caption, ConnectionsEstablished...}
+Win32_PerfFormattedData_Tcpip_Ne... {}                   {BytesReceivedPersec, BytesSentPersec, BytesTotalPersec, Caption...}
+Win32_PerfRawData_Tcpip_NetworkA... {}                   {BytesReceivedPersec, BytesSentPersec, BytesTotalPersec, Caption...}
+Win32_PerfFormattedData_Tcpip_Ne... {}                   {BytesReceivedPersec, BytesSentPersec, BytesTotalPersec, Caption...}
+Win32_PerfRawData_Tcpip_NetworkI... {}                   {BytesReceivedPersec, BytesSentPersec, BytesTotalPersec, Caption...}
+
+
+PS C:\Users\santi> Get-WmiObject -List| where name -Like "*networkAdapter*" 
+
+
+   NameSpace: ROOT\cimv2
+
+Name                                Methods              Properties
+----                                -------              ----------
+CIM_NetworkAdapter                  {SetPowerState, R... {AutoSense, Availability, Caption, ConfigManagerErrorCode...}
+Win32_NetworkAdapter                {SetPowerState, R... {AdapterType, AdapterTypeId, AutoSense, Availability...}
+Win32_NetworkAdapterConfiguration   {EnableDHCP, Rene... {ArpAlwaysSourceRoute, ArpUseEtherSNAP, Caption, DatabasePath...}
+Win32_NetworkAdapterSetting         {}                   {Element, Setting}
+Win32_PerfFormattedData_Tcpip_Ne... {}                   {BytesReceivedPersec, BytesSentPersec, BytesTotalPersec, Caption...}
+Win32_PerfRawData_Tcpip_NetworkA... {}                   {BytesReceivedPersec, BytesSentPersec, BytesTotalPersec, Caption...}
+
+
+PS C:\Users\santi> Get-WmiObject -Class Win32_NetworkAdapterConfiguration -List |Select-Object methods
+
+Methods
+-------
+{EnableDHCP, RenewDHCPLease, RenewDHCPLeaseAll, ReleaseDHCPLease...}
+
+
+PS C:\Users\santi> Get-WmiObject -List | where name -Like "*QuickFixEngineering*"
+
+
+   NameSpace: ROOT\cimv2
+
+Name                                Methods              Properties
+----                                -------              ----------
+Win32_QuickFixEngineering           {}                   {Caption, CSName, Description, FixComments...}
+
+
+PS C:\Users\santi> Get-WmiObject -Class Win32_QuickFixEngineering
+
+Source        Description      HotFixID      InstalledBy          InstalledOn
+------        -----------      --------      -----------          -----------
+MYLAP         Update           KB4534132     NT AUTHORITY\SYSTEM  10/02/2020 12:00:00 a.m.
+MYLAP         Security Update  KB4515383     NT AUTHORITY\SYSTEM  21/09/2019 12:00:00 a.m.
+MYLAP         Security Update  KB4515530     NT AUTHORITY\SYSTEM  21/09/2019 12:00:00 a.m.
+MYLAP         Security Update  KB4516115     NT AUTHORITY\SYSTEM  21/09/2019 12:00:00 a.m.
+MYLAP         Security Update  KB4520390     NT AUTHORITY\SYSTEM  4/10/2019 12:00:00 a.m.
+MYLAP         Security Update  KB4521863     NT AUTHORITY\SYSTEM  13/10/2019 12:00:00 a.m.
+MYLAP         Security Update  KB4524244     NT AUTHORITY\SYSTEM  14/02/2020 12:00:00 a.m.
+MYLAP         Security Update  KB4524569     NT AUTHORITY\SYSTEM  14/11/2019 12:00:00 a.m.
+MYLAP         Security Update  KB4528759     NT AUTHORITY\SYSTEM  20/01/2020 12:00:00 a.m.
+MYLAP         Security Update  KB4537759     NT AUTHORITY\SYSTEM  13/02/2020 12:00:00 a.m.
+MYLAP         Security Update  KB4538674     NT AUTHORITY\SYSTEM  13/02/2020 12:00:00 a.m.
+MYLAP         Security Update  KB4541338     NT AUTHORITY\SYSTEM  11/03/2020 12:00:00 a.m.
+MYLAP         Update           KB4551762     NT AUTHORITY\SYSTEM  13/03/2020 12:00:00 a.m.
+
+
+PS C:\Users\santi> Get-hotFix
+
+Source        Description      HotFixID      InstalledBy          InstalledOn
+------        -----------      --------      -----------          -----------
+MYLAP         Update           KB4534132     NT AUTHORITY\SYSTEM  10/02/2020 12:00:00 a.m.
+MYLAP         Security Update  KB4515383     NT AUTHORITY\SYSTEM  21/09/2019 12:00:00 a.m.
+MYLAP         Security Update  KB4515530     NT AUTHORITY\SYSTEM  21/09/2019 12:00:00 a.m.
+MYLAP         Security Update  KB4516115     NT AUTHORITY\SYSTEM  21/09/2019 12:00:00 a.m.
+MYLAP         Security Update  KB4520390     NT AUTHORITY\SYSTEM  4/10/2019 12:00:00 a.m.
+MYLAP         Security Update  KB4521863     NT AUTHORITY\SYSTEM  13/10/2019 12:00:00 a.m.
+MYLAP         Security Update  KB4524244     NT AUTHORITY\SYSTEM  14/02/2020 12:00:00 a.m.
+MYLAP         Security Update  KB4524569     NT AUTHORITY\SYSTEM  14/11/2019 12:00:00 a.m.
+MYLAP         Security Update  KB4528759     NT AUTHORITY\SYSTEM  20/01/2020 12:00:00 a.m.
+MYLAP         Security Update  KB4537759     NT AUTHORITY\SYSTEM  13/02/2020 12:00:00 a.m.
+MYLAP         Security Update  KB4538674     NT AUTHORITY\SYSTEM  13/02/2020 12:00:00 a.m.
+MYLAP         Security Update  KB4541338     NT AUTHORITY\SYSTEM  11/03/2020 12:00:00 a.m.
+MYLAP         Update           KB4551762     NT AUTHORITY\SYSTEM  13/03/2020 12:00:00 a.m.
+
+
+PS C:\Users\santi> Get-WmiObject -List | where name -Like "*service*"
+
+
+   NameSpace: ROOT\cimv2
+
+Name                                Methods              Properties
+----                                -------              ----------
+MSFT_NetSevereServiceFailed         {}                   {SECURITY_DESCRIPTOR, Service, TIME_CREATED}
+MSFT_NetServiceNotInteractive       {}                   {SECURITY_DESCRIPTOR, Service, TIME_CREATED}
+MSFT_NetServiceConfigBackoutFailed  {}                   {ConfigField, SECURITY_DESCRIPTOR, Service, TIME_CREATED}
+MSFT_NetServiceShutdownFailed       {}                   {SECURITY_DESCRIPTOR, Service, TIME_CREATED}
+MSFT_NetServiceStartHung            {}                   {SECURITY_DESCRIPTOR, Service, TIME_CREATED}
+MSFT_NetServiceStopControlSuccess   {}                   {Comment, Control, Reason, ReasonText...}
+MSFT_NetServiceSlowStartup          {}                   {SECURITY_DESCRIPTOR, Service, StartupTime, TIME_CREATED}
+MSFT_NetBadServiceState             {}                   {SECURITY_DESCRIPTOR, Service, State, TIME_CREATED}
+MSFT_NetServiceStartTypeChanged     {}                   {NewStartType, OldStartType, SECURITY_DESCRIPTOR, Service...}
+MSFT_NetServiceLogonTypeNotGranted  {}                   {Account, Error, SECURITY_DESCRIPTOR, Service...}
+MSFT_NetServiceStartFailedGroup     {}                   {Group, SECURITY_DESCRIPTOR, Service, TIME_CREATED}
+MSFT_NetDependOnLaterService        {}                   {SECURITY_DESCRIPTOR, Service, TIME_CREATED}
+MSFT_NetServiceDifferentPIDConne... {}                   {ActualPID, ExpectedPID, SECURITY_DESCRIPTOR, Service...}
+MSFT_NetServiceCrashNoAction        {}                   {SECURITY_DESCRIPTOR, Service, TIME_CREATED, TimesFailed}
+MSFT_NetServiceExitFailed           {}                   {Error, SECURITY_DESCRIPTOR, Service, TIME_CREATED}
+MSFT_NetServiceStartFailedII        {}                   {DependedOnService, Error, SECURITY_DESCRIPTOR, Service...}
+MSFT_NetServiceExitFailedSpecific   {}                   {Error, SECURITY_DESCRIPTOR, Service, TIME_CREATED}
+MSFT_NetServiceCrash                {}                   {Action, ActionDelay, ActionType, SECURITY_DESCRIPTOR...}
+MSFT_NetServiceRecoveryFailed       {}                   {Action, ActionType, Error, SECURITY_DESCRIPTOR...}
+MSFT_NetServiceStatusSuccess        {}                   {Control, SECURITY_DESCRIPTOR, Service, TIME_CREATED}
+MSFT_NetServiceControlSuccess       {}                   {Control, SECURITY_DESCRIPTOR, Service, sid...}
+MSFT_NetServiceStartFailed          {}                   {Error, SECURITY_DESCRIPTOR, Service, TIME_CREATED}
+MSFT_NetServiceStartFailedNone      {}                   {NonExistingService, SECURITY_DESCRIPTOR, Service, TIME_CREATED}
+CIM_Service                         {StartService, St... {Caption, CreationClassName, Description, InstallDate...}
+Win32_BaseService                   {StartService, St... {AcceptPause, AcceptStop, Caption, CreationClassName...}
+Win32_Service                       {StartService, St... {AcceptPause, AcceptStop, Caption, CheckPoint...}
+CIM_BootService                     {StartService, St... {Caption, CreationClassName, Description, InstallDate...}
+CIM_ClusteringService               {StartService, St... {Caption, CreationClassName, Description, InstallDate...}
+Win32_ApplicationService            {StartService, St... {Caption, CreationClassName, Description, InstallDate...}
+CIM_ServiceAccessPoint              {}                   {Caption, CreationClassName, Description, InstallDate...}
+SoftwareLicensingService            {InstallProductKe... {ClientMachineID, DiscoveredKeyManagementServiceMachineIpAddress, DiscoveredKeyManage...
+Win32_ServiceControl                {}                   {Arguments, Caption, Description, Event...}
+Win32_ServiceSpecification          {Invoke}             {Caption, CheckID, CheckMode, Dependencies...}
+Win32_ServiceSpecificationService   {}                   {Check, Element}
+Win32_SystemServices                {}                   {GroupComponent, PartComponent}
+Win32_LoadOrderGroupServiceMembers  {}                   {GroupComponent, PartComponent}
+CIM_ServiceAccessBySAP              {}                   {Antecedent, Dependent}
+CIM_BootServiceAccessBySAP          {}                   {Antecedent, Dependent}
+CIM_ClusterServiceAccessBySAP       {}                   {Antecedent, Dependent}
+Win32_LoadOrderGroupServiceDepen... {}                   {Antecedent, Dependent}
+CIM_HostedService                   {}                   {Antecedent, Dependent}
+CIM_HostedBootService               {}                   {Antecedent, Dependent}
+CIM_DeviceServiceImplementation     {}                   {Antecedent, Dependent}
+CIM_ServiceServiceDependency        {}                   {Antecedent, Dependent, TypeOfDependency}
+Win32_DependentService              {}                   {Antecedent, Dependent, TypeOfDependency}
+CIM_SoftwareFeatureServiceImplem... {}                   {Antecedent, Dependent}
+CIM_ServiceSAPDependency            {}                   {Antecedent, Dependent}
+Win32_PerfFormattedData_aspnetst... {}                   {Caption, Description, Frequency_Object, Frequency_PerfTime...}
+Win32_PerfRawData_aspnetstate_AS... {}                   {Caption, Description, Frequency_Object, Frequency_PerfTime...}
+Win32_PerfFormattedData_Counters... {}                   {Caption, CurrentUrisCached, Description, Frequency_Object...}
+Win32_PerfRawData_Counters_HTTPS... {}                   {Caption, CurrentUrisCached, Description, Frequency_Object...}
+Win32_PerfFormattedData_Counters... {}                   {ArrivalRate, CacheHitRate, Caption, CurrentQueueSize...}
+Win32_PerfRawData_Counters_HTTPS... {}                   {ArrivalRate, CacheHitRate, Caption, CurrentQueueSize...}
+Win32_PerfFormattedData_Counters... {}                   {AllRequests, BytesReceivedRate, BytesSentRate, BytesTransferredRate...}
+Win32_PerfRawData_Counters_HTTPS... {}                   {AllRequests, BytesReceivedRate, BytesSentRate, BytesTransferredRate...}
+Win32_PerfFormattedData_Counters... {}                   {Caption, Description, Frequency_Object, Frequency_PerfTime...}
+Win32_PerfRawData_Counters_Hyper... {}                   {Caption, Description, Frequency_Object, Frequency_PerfTime...}
+Win32_PerfFormattedData_FaxServi... {}                   {Bytesreceived, Bytessent, Caption, Description...}
+Win32_PerfRawData_FaxService_Fax... {}                   {Bytesreceived, Bytessent, Caption, Description...}
+Win32_PerfFormattedData_LocalSes... {}                   {ActiveSessions, Caption, Description, Frequency_Object...}
+Win32_PerfRawData_LocalSessionMa... {}                   {ActiveSessions, Caption, Description, Frequency_Object...}
+Win32_PerfFormattedData_Microsof... {}                   {Caption, Description, Frequency_Object, Frequency_PerfTime...}
+Win32_PerfRawData_MicrosoftWindo... {}                   {Caption, Description, Frequency_Object, Frequency_PerfTime...}
+Win32_PerfFormattedData_Microsof... {}                   {Caption, Description, Frequency_Object, Frequency_PerfTime...}
+Win32_PerfRawData_MicrosoftWindo... {}                   {Caption, Description, Frequency_Object, Frequency_PerfTime...}
+Win32_PerfFormattedData_Microsof... {}                   {Caption, ClockFrequencyAdjustment, ClockFrequencyAdjustmentPPB, ComputedTimeOffset...}
+Win32_PerfRawData_MicrosoftWindo... {}                   {Caption, ClockFrequencyAdjustment, ClockFrequencyAdjustmentPPB, ComputedTimeOffset...}
+Win32_PerfFormattedData_ServiceM... {}                   {Calls, CallsDuration, CallsFailed, CallsFailedPerSecond...}
+Win32_PerfRawData_ServiceModel40... {}                   {Calls, CallsDuration, CallsDuration_Base, CallsFailed...}
+Win32_PerfFormattedData_ServiceM... {}                   {CallFailedPerSecond, Calls, CallsDuration, CallsFailed...}
+Win32_PerfRawData_ServiceModel40... {}                   {CallFailedPerSecond, Calls, CallsDuration, CallsDuration_Base...}
+Win32_PerfFormattedData_ServiceM... {}                   {Calls, CallsDuration, CallsFailed, CallsFailedPerSecond...}
+Win32_PerfRawData_ServiceModel40... {}                   {Calls, CallsDuration, CallsDuration_Base, CallsFailed...}
+Win32_PerfFormattedData_ServiceM... {}                   {Calls, CallsDuration, CallsFailed, CallsFailedPerSecond...}
+Win32_PerfRawData_ServiceModelEn... {}                   {Calls, CallsDuration, CallsDuration_Base, CallsFailed...}
+Win32_PerfFormattedData_ServiceM... {}                   {CallFailedPerSecond, Calls, CallsDuration, CallsFailed...}
+Win32_PerfRawData_ServiceModelOp... {}                   {CallFailedPerSecond, Calls, CallsDuration, CallsDuration_Base...}
+Win32_PerfFormattedData_ServiceM... {}                   {Calls, CallsDuration, CallsFailed, CallsFailedPerSecond...}
+Win32_PerfRawData_ServiceModelSe... {}                   {Calls, CallsDuration, CallsDuration_Base, CallsFailed...}
+Win32_PerfFormattedData_Workflow... {}                   {AverageWorkflowLoadTime, AverageWorkflowPersistTime, Caption, Description...}
+Win32_PerfRawData_WorkflowServic... {}                   {AverageWorkflowLoadTime, AverageWorkflowLoadTime_Base, AverageWorkflowPersistTime, A...
+
+
+PS C:\Users\santi> Get-WmiObject -Class win32_service 
+
+
+ExitCode  : 0
+Name      : AdaptiveSleepService
+ProcessId : 7896
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : AdobeARMservice
+ProcessId : 4112
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : AJRouter
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 1077
+Name      : ALG
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : AMD External Events Utility
+ProcessId : 1608
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : AppHostSvc
+ProcessId : 3804
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : AppIDSvc
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : Appinfo
+ProcessId : 7628
+StartMode : Manual
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : AppReadiness
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : AppXSvc
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 1077
+Name      : aspnet_state
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : AudioEndpointBuilder
+ProcessId : 2884
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : Audiosrv
+ProcessId : 2960
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : autotimesvc
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 1077
+Name      : AxInstSV
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : BDESVC
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : BFE
+ProcessId : 3420
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : BITS
+ProcessId : 1604
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : Bonjour Service
+ProcessId : 3596
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : BrokerInfrastructure
+ProcessId : 628
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : BTAGService
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : BTDevManager
+ProcessId : 3708
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : BthAvctpSvc
+ProcessId : 8848
+StartMode : Manual
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : bthserv
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : camsvc
+ProcessId : 2268
+StartMode : Manual
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : CDPSvc
+ProcessId : 8148
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : CertPropSvc
+ProcessId : 6836
+StartMode : Manual
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : ClickToRunSvc
+ProcessId : 10228
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : ClipSVC
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 1077
+Name      : COMSysApp
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : CoreMessagingRegistrar
+ProcessId : 1704
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : CryptSvc
+ProcessId : 3984
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : DcomLaunch
+ProcessId : 628
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : defragsvc
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : DeviceAssociationService
+ProcessId : 3916
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : DeviceInstall
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 1077
+Name      : DevQueryBroker
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : Dhcp
+ProcessId : 1904
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : diagnosticshub.standardcollector.service
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 1077
+Name      : diagsvc
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : DiagTrack
+ProcessId : 3908
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : Disc Soft Lite Bus Service
+ProcessId : 11460
+StartMode : Manual
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : DispBrokerDesktopSvc
+ProcessId : 2328
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : DisplayEnhancementService
+ProcessId : 1364
+StartMode : Manual
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : DmEnrollmentSvc
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : dmwappushservice
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : Dnscache
+ProcessId : 1456
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : DoSvc
+ProcessId : 8704
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : dot3svc
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : DPS
+ProcessId : 3824
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : DsmSvc
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : DsSvc
+ProcessId : 1208
+StartMode : Manual
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : DusmSvc
+ProcessId : 2488
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : Eaphost
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : edgeupdate
+ProcessId : 0
+StartMode : Auto
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : edgeupdatem
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 1077
+Name      : EFS
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 1077
+Name      : embeddedmode
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 1077
+Name      : EntAppSvc
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : EventLog
+ProcessId : 1712
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : EventSystem
+ProcessId : 2788
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : Fax
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : fdPHost
+ProcessId : 6528
+StartMode : Manual
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : FDResPub
+ProcessId : 6812
+StartMode : Manual
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : fhsvc
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : FontCache
+ProcessId : 2660
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : FontCache3.0.0.0
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : FrameServer
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 1077
+Name      : GoogleChromeElevationService
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : gpsvc
+ProcessId : 0
+StartMode : Auto
+State     : Stopped
+Status    : OK
+
+ExitCode  : 1077
+Name      : GraphicsPerfSvc
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : gupdate
+ProcessId : 0
+StartMode : Auto
+State     : Stopped
+Status    : OK
+
+ExitCode  : 1077
+Name      : gupdatem
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : Hamachi2Svc
+ProcessId : 4528
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : hidserv
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : HP Comm Recover
+ProcessId : 11544
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : HP Orbit Service
+ProcessId : 5576
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : HPJumpStartBridge
+ProcessId : 12104
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : hpqwmiex
+ProcessId : 11328
+StartMode : Manual
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : HPSupportSolutionsFrameworkService
+ProcessId : 8976
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : HPWMISVC
+ProcessId : 3748
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : HvHost
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 1077
+Name      : icssvc
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : IKEEXT
+ProcessId : 3832
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : InstallService
+ProcessId : 8964
+StartMode : Manual
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : iphlpsvc
+ProcessId : 4536
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : IpxlatCfgSvc
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : KeyIso
+ProcessId : 964
+StartMode : Manual
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : KtmRm
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : LanmanServer
+ProcessId : 4296
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : LanmanWorkstation
+ProcessId : 3456
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : lfsvc
+ProcessId : 7132
+StartMode : Manual
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : LicenseManager
+ProcessId : 6820
+StartMode : Manual
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : lltdsvc
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : lmhosts
+ProcessId : 11768
+StartMode : Manual
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : LMIGuardianSvc
+ProcessId : 3796
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : LSM
+ProcessId : 1112
+StartMode : Unknown
+State     : Running
+Status    : UNKNOWN
+
+ExitCode  : 0
+Name      : LxpSvc
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : MapsBroker
+ProcessId : 0
+StartMode : Auto
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : McAfee WebAdvisor
+ProcessId : 3736
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : MicrosoftEdgeElevationService
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : mpssvc
+ProcessId : 3420
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : MSDTC
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 1077
+Name      : MSiSCSI
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : msiserver
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 1077
+Name      : NaturalAuthentication
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 1077
+Name      : NcaSvc
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : NcbService
+ProcessId : 1292
+StartMode : Manual
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : NcdAutoSetup
+ProcessId : 6124
+StartMode : Manual
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : Netlogon
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 1077
+Name      : Netman
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : netprofm
+ProcessId : 2136
+StartMode : Manual
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : NetSetupSvc
+ProcessId : 0
+StartMode : Unknown
+State     : Stopped
+Status    : UNKNOWN
+
+ExitCode  : 1077
+Name      : NetTcpPortSharing
+ProcessId : 0
+StartMode : Disabled
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : NgcCtnrSvc
+ProcessId : 6460
+StartMode : Manual
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : NgcSvc
+ProcessId : 6840
+StartMode : Manual
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : NlaSvc
+ProcessId : 548
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : nsi
+ProcessId : 1756
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : ose
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : osrss
+ProcessId : 3720
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : p2pimsvc
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 1077
+Name      : p2psvc
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : PcaSvc
+ProcessId : 8040
+StartMode : Manual
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : perceptionsimulation
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 1077
+Name      : PerfHost
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 1077
+Name      : PhoneSvc
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 1077
+Name      : pla
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : PlugPlay
+ProcessId : 608
+StartMode : Manual
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : PNRPAutoReg
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 1077
+Name      : PNRPsvc
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : PolicyAgent
+ProcessId : 5864
+StartMode : Manual
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : Power
+ProcessId : 628
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : PrintNotify
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : ProfSvc
+ProcessId : 1476
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : PushToInstall
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : QWAVE
+ProcessId : 4184
+StartMode : Manual
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : RasAuto
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : RasMan
+ProcessId : 4612
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : RemoteAccess
+ProcessId : 0
+StartMode : Disabled
+State     : Stopped
+Status    : OK
+
+ExitCode  : 1077
+Name      : RemoteRegistry
+ProcessId : 0
+StartMode : Disabled
+State     : Stopped
+Status    : OK
+
+ExitCode  : 1077
+Name      : RetailDemo
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 1077
+Name      : RmSvc
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : RpcEptMapper
+ProcessId : 1060
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : RpcLocator
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : RpcSs
+ProcessId : 1060
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : RtkAudioService
+ProcessId : 3044
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : RtkBtManServ
+ProcessId : 3756
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : SamSs
+ProcessId : 964
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : SCardSvr
+ProcessId : 6784
+StartMode : Manual
+State     : Running
+Status    : OK
+
+ExitCode  : 0
+Name      : ScDeviceEnum
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 0
+Name      : Schedule
+ProcessId : 1524
+StartMode : Auto
+State     : Running
+Status    : OK
+
+ExitCode  : 1077
+Name      : SCPolicySvc
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 1077
+Name      : SDRSVC
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+ExitCode  : 1077
+Name      : seclogon
+ProcessId : 0
+StartMode : Manual
+State     : Stopped
+Status    : OK
+
+>> ErrorTerminación(): "Se ha detenido la canalización."
+>> ErrorTerminación(): "Se ha detenido la canalización."
+PS C:\Users\santi> Get-WmiObject -Class win32_service | fl -Property status,startMode, login, startname
+
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : localSystem
+
+status    : OK
+startMode : Manual
+startname : NT Authority\LocalService
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\NetworkService
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : localSystem
+
+status    : OK
+startMode : Auto
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Auto
+startname : NT Authority\NetworkService
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : localSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : NT Authority\LocalService
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : NT AUTHORITY\NetworkService
+
+status    : OK
+startMode : Auto
+startname : NT Authority\NetworkService
+
+status    : OK
+startMode : Manual
+startname : localSystem
+
+status    : OK
+startMode : Auto
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : NT Authority\LocalService
+
+status    : OK
+startMode : Manual
+startname : localSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Auto
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\NetworkService
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : NT Authority\LocalService
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : NT Authority\LocalService
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\NetworkService
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : NT AUTHORITY\NetworkService
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : NT Authority\LocalService
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : UNKNOWN
+startMode : Unknown
+startname :
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : NT AUTHORITY\NetworkService
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : NT Authority\LocalService
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\NetworkService
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : UNKNOWN
+startMode : Unknown
+startname :
+
+status    : OK
+startMode : Disabled
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : NT AUTHORITY\NetworkService
+
+status    : OK
+startMode : Auto
+startname : NT Authority\LocalService
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : NT Authority\LocalService
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : NT Authority\NetworkService
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : localSystem
+
+status    : OK
+startMode : Auto
+startname : localSystem
+
+status    : OK
+startMode : Disabled
+startname : localSystem
+
+status    : OK
+startMode : Disabled
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Auto
+startname : NT AUTHORITY\NetworkService
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\NetworkService
+
+status    : OK
+startMode : Auto
+startname : NT AUTHORITY\NetworkService
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : localSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : localSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Disabled
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\NetworkService
+
+status    : OK
+startMode : Manual
+startname : NT Authority\LocalService
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : NT AUTHORITY\NetworkService
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Disabled
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : NT Authority\LocalService
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : NT Authority\LocalService
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\NetworkService
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : NT Authority\NetworkService
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : localSystem
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : localSystem
+
+status    : OK
+startMode : Disabled
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : localSystem
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : localSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : NT Authority\LocalService
+
+status    : OK
+startMode : Manual
+startname : localSystem
+
+status    : OK
+startMode : Manual
+startname : localSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : NT Authority\LocalService
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\NetworkService
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : localSystem
+
+status    : OK
+startMode : Manual
+startname : localSystem
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Auto
+startname : localSystem
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\NetworkService
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : NT Authority\LocalService
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : localSystem
+
+status    : OK
+startMode : Auto
+startname : NT AUTHORITY\NetworkService
+
+status    : OK
+startMode : Manual
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Auto
+startname : NT AUTHORITY\LocalService
+
+status    : OK
+startMode : Auto
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : localSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname : LocalSystem
+
+status    : OK
+startMode : Manual
+startname :
+
+status    : OK
+startMode : Manual
+startname :
+
+status    : OK
+startMode : Manual
+startname :
+
+status    : OK
+startMode : Manual
+startname :
+
+status    : OK
+startMode : Manual
+startname :
+
+status    : OK
+startMode : Auto
+startname :
+
+status    : OK
+startMode : Manual
+startname :
+
+status    : OK
+startMode : Manual
+startname :
+
+status    : OK
+startMode : Manual
+startname :
+
+status    : OK
+startMode : Manual
+startname :
+
+status    : OK
+startMode : Manual
+startname :
+
+status    : OK
+startMode : Manual
+startname :
+
+status    : OK
+startMode : Auto
+startname :
+
+status    : OK
+startMode : Manual
+startname :
+
+status    : OK
+startMode : Manual
+startname :
+
+status    : OK
+startMode : Manual
+startname :
+
+status    : OK
+startMode : Manual
+startname :
+
+status    : OK
+startMode : Auto
+startname :
+
+
+
+PS C:\Users\santi> Get-CimClass -Namespace root\SecurityCenter2 | where cimclassname -Like '*product*'
+
+
+   NameSpace: ROOT/SecurityCenter2
+
+CimClassName                        CimClassMethods      CimClassProperties
+------------                        ---------------      ------------------
+AntiSpywareProduct                  {}                   {displayName, instanceGuid, pathToSignedProductExe, pathToSignedReportingExe...}
+AntiVirusProduct                    {}                   {displayName, instanceGuid, pathToSignedProductExe, pathToSignedReportingExe...}
+FirewallProduct                     {}                   {displayName, instanceGuid, pathToSignedProductExe, pathToSignedReportingExe...}
+
+
+PS C:\Users\santi> Get-CimInstance -Namespace root\SecurityCenter2 -ClassName AntiSpywareProduct
+
+
+displayName              : Windows Defender
+instanceGuid             : {D68DDC3A-831F-4fae-9E44-DA132C1ACF46}
+pathToSignedProductExe   : windowsdefender://
+pathToSignedReportingExe : %ProgramFiles%\Windows Defender\MsMpeng.exe
+productState             : 397568
+timestamp                : Sat, 21 Sep 2019 03:44:13 GMT
+PSComputerName           :
+
+
+
+PS C:\Users\santi>  Get-CimInstance -Namespace root\SecurityCenter2 -ClassName AntiVirusProduct
+
+
+displayName              : Windows Defender
+instanceGuid             : {D68DDC3A-831F-4fae-9E44-DA132C1ACF46}
+pathToSignedProductExe   : windowsdefender://
+pathToSignedReportingExe : %ProgramFiles%\Windows Defender\MsMpeng.exe
+productState             : 397568
+timestamp                : Mon, 16 Mar 2020 14:53:20 GMT
+PSComputerName           :
+
+
+
+PS C:\Users\santi> Stop-Transcript
+**********************
+Fin de la transcripción de Windows PowerShell
+Hora de finalización: 20200317151943
+**********************
