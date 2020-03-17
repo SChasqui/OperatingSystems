@@ -121,14 +121,15 @@
    parches con el nombre **quick-fix engineering**). Es diferente el listado al
    que produce el cmdlet ``Get-Hotfix``?
    
+   Para consultar la clase se usó el siguiente comando:
    ```powershell
    Get-WmiObject -List | where name -Like "*QuickFixEngineering*"
    ```
-   
+   Posteriormente, se mostraron todas las actualizaciones o parches con el siguiente comando:
    ```powershell
    Get-WmiObject -Class Win32_QuickFixEngineering
    ``` 
-   
+   Obteniendo este resultado:
    ```console
     
 
@@ -151,11 +152,11 @@
    MYLAP         Update           KB4540673     NT AUTHORITY\SYSTEM  11/03/2020 12:00:00 a.m.
     
    ``` 
-   
+  Por otro lado, se hizo la consulta con el siguiente método:
   ```powershell
    Get-hotFix
   ``` 
-   
+  Evidenciando en su salida, que es el mismo listado de la consulta realizada con WMI
    ```console
    
    
@@ -182,9 +183,6 @@
    su modalidad de inicio, y las cuentas que emplean para hacer login.
    
    ```powershell
-      Get-WmiObject -Class win32_service 
-   ``` 
-   ```powershell
       Get-WmiObject -Class win32_service | fl -Property status,startMode, login, startname
    ```    
    
@@ -198,10 +196,11 @@
    los nombres de las aplicaciones antispyware instaladas en el sistema.
    También puede consultar si hay productos antivirus instalados en el sistema.
    
+   Consulta de aplicaciones antiSpyware
    ```powershell
       Get-CimInstance -Namespace root\SecurityCenter2 -ClassName AntiSpywareProduct
    ```
-   
+   Consulta de productos antivirus
    ```powershell
       Get-CimInstance -Namespace root\SecurityCenter2 -ClassName AntiVirusProduct
    ```
